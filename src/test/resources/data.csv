@@ -1,0 +1,8 @@
+"current temperature 15 below max", 25, 15, 16
+"current temperature 10 below max", 25, 10, 11
+"current temperature 5 below max", 25, 5, 6
+"current temperature below max by 1 degree", 25, 24, 25
+"current temperature below max by 2 degree", 25, 23, 24
+"current temperature is equal to max", 25, 25, 25
+"current temperature above max by 1 degree", 25, 26, 25
+"current temperature above max by 2 degree", 25, 27, 25
