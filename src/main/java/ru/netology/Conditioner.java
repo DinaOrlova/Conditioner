@@ -36,12 +36,12 @@ public class Conditioner {
     }
 
     public void setCurrentTemperature(int currentTemperature) {
-        if (currentTemperature > maxTemperature) {
-            return;
-        }
-        if (currentTemperature < minTemperature) {
-            return;
-        }
+//       if (currentTemperature > maxTemperature) {
+//            return;
+//        }
+//        if (currentTemperature < minTemperature) {
+//            return;
+//        }
         // здесь уверены, что все проверки прошли
         this.currentTemperature = currentTemperature;
     }
@@ -62,37 +62,27 @@ public class Conditioner {
         this.on = on;
     }
 
-
-
-
-
-    public void increaseCurrentTemperature(int currentTemperature) {
-
-        if (currentTemperature > maxTemperature) {
+    public void increaseCurrentTemperature() {
+        if (currentTemperature >= maxTemperature) {
             this.currentTemperature = maxTemperature;
             return;
         }
-
         if (currentTemperature < maxTemperature) {
-             this.currentTemperature = currentTemperature + 1;
-             return;
+            this.currentTemperature = getCurrentTemperature() + 1;
+            return;
         }
-
-        this.currentTemperature = currentTemperature;
+        this.currentTemperature = getCurrentTemperature();
     }
 
-    public void decreaseCurrentTemperature(int currentTemperature) {
-
-        if (currentTemperature < minTemperature) {
+    public void decreaseCurrentTemperature() {
+        if (currentTemperature <= minTemperature) {
             this.currentTemperature = minTemperature;
             return;
         }
-
-       if (currentTemperature > minTemperature) {
-           this.currentTemperature = currentTemperature - 1;
-           return;
-       }
-
-       this.currentTemperature = currentTemperature;
+        if (currentTemperature > minTemperature) {
+            this.currentTemperature = getCurrentTemperature() - 1;
+            return;
+        }
+        this.currentTemperature = getCurrentTemperature();
     }
 }

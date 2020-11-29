@@ -23,28 +23,24 @@ public void shouldGetAndSet() {
 
 @ParameterizedTest
     @CsvFileSource(resources = "/data.csv")
-
     void shouldIncreaseCurrentTemperature(String test, int maxTemperature, int currentTemperature, int expected) {
-
     Conditioner conditioner = new Conditioner();
 
-    conditioner.setCurrentTemperature(currentTemperature);
     conditioner.setMaxTemperature(maxTemperature);
-    conditioner.increaseCurrentTemperature(currentTemperature);
+    conditioner.setCurrentTemperature(currentTemperature);
+    conditioner.increaseCurrentTemperature();
 
     assertEquals(expected, conditioner.getCurrentTemperature());
 }
 
 @ParameterizedTest
     @CsvFileSource(resources = "/data2.csv")
-
     void shouldDecreaseCurrentTemperature(String test, int minTemperature, int currentTemperature, int expected) {
-
     Conditioner conditioner = new Conditioner();
 
-    conditioner.setCurrentTemperature(currentTemperature);
     conditioner.setMinTemperature(minTemperature);
-    conditioner.decreaseCurrentTemperature(currentTemperature);
+    conditioner.setCurrentTemperature(currentTemperature);
+    conditioner.decreaseCurrentTemperature();
 
     assertEquals(expected, conditioner.getCurrentTemperature());
 }
